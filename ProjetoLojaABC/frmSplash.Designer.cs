@@ -30,68 +30,68 @@ namespace ProjetoLojaABC
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSplash));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pctLogo = new System.Windows.Forms.PictureBox();
+            this.prgSplash = new System.Windows.Forms.ProgressBar();
+            this.lblPorcentagem = new System.Windows.Forms.Label();
+            this.lblSimbolo = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // pctLogo
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(244, 147);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(300, 225);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pctLogo.Image = ((System.Drawing.Image)(resources.GetObject("pctLogo.Image")));
+            this.pctLogo.Location = new System.Drawing.Point(244, 147);
+            this.pctLogo.Name = "pctLogo";
+            this.pctLogo.Size = new System.Drawing.Size(300, 225);
+            this.pctLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctLogo.TabIndex = 0;
+            this.pctLogo.TabStop = false;
             // 
-            // progressBar1
+            // prgSplash
             // 
-            this.progressBar1.Location = new System.Drawing.Point(244, 423);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(300, 32);
-            this.progressBar1.TabIndex = 1;
-            this.progressBar1.Value = 50;
+            this.prgSplash.Location = new System.Drawing.Point(244, 423);
+            this.prgSplash.Name = "prgSplash";
+            this.prgSplash.Size = new System.Drawing.Size(300, 32);
+            this.prgSplash.TabIndex = 1;
+            this.prgSplash.Value = 50;
             // 
-            // label1
+            // lblPorcentagem
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(378, 398);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(18, 20);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "0";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.lblPorcentagem.AutoSize = true;
+            this.lblPorcentagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPorcentagem.Location = new System.Drawing.Point(378, 398);
+            this.lblPorcentagem.Name = "lblPorcentagem";
+            this.lblPorcentagem.Size = new System.Drawing.Size(18, 20);
+            this.lblPorcentagem.TabIndex = 2;
+            this.lblPorcentagem.Text = "0";
+            this.lblPorcentagem.Click += new System.EventHandler(this.label1_Click);
             // 
-            // label2
+            // lblSimbolo
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(392, 398);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(23, 20);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "%";
+            this.lblSimbolo.AutoSize = true;
+            this.lblSimbolo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSimbolo.Location = new System.Drawing.Point(392, 398);
+            this.lblSimbolo.Name = "lblSimbolo";
+            this.lblSimbolo.Size = new System.Drawing.Size(23, 20);
+            this.lblSimbolo.TabIndex = 3;
+            this.lblSimbolo.Text = "%";
             // 
             // frmSplash
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.progressBar1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.lblSimbolo);
+            this.Controls.Add(this.lblPorcentagem);
+            this.Controls.Add(this.prgSplash);
+            this.Controls.Add(this.pctLogo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmSplash";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LojaABC - Splash";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -99,9 +99,9 @@ namespace ProjetoLojaABC
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pctLogo;
+        private System.Windows.Forms.ProgressBar prgSplash;
+        private System.Windows.Forms.Label lblPorcentagem;
+        private System.Windows.Forms.Label lblSimbolo;
     }
 }
