@@ -85,6 +85,7 @@ namespace ProjetoLojaABC
             this.btnFuncionarios.Text = "&Funcionários";
             this.btnFuncionarios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnFuncionarios.UseVisualStyleBackColor = true;
+            this.btnFuncionarios.Click += new System.EventHandler(this.btnFuncionarios_Click);
             // 
             // btnFornecedores
             // 
