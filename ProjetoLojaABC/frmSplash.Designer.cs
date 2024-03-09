@@ -34,6 +34,7 @@ namespace ProjetoLojaABC
             this.prgSplash = new System.Windows.Forms.ProgressBar();
             this.lblPorcentagem = new System.Windows.Forms.Label();
             this.lblSimbolo = new System.Windows.Forms.Label();
+            this.btnEntrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,11 +77,22 @@ namespace ProjetoLojaABC
             this.lblSimbolo.TabIndex = 3;
             this.lblSimbolo.Text = "%";
             // 
+            // btnEntrar
+            // 
+            this.btnEntrar.Location = new System.Drawing.Point(666, 503);
+            this.btnEntrar.Name = "btnEntrar";
+            this.btnEntrar.Size = new System.Drawing.Size(88, 30);
+            this.btnEntrar.TabIndex = 4;
+            this.btnEntrar.Text = "entrar";
+            this.btnEntrar.UseVisualStyleBackColor = true;
+            this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
+            // 
             // frmSplash
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.lblSimbolo);
             this.Controls.Add(this.lblPorcentagem);
             this.Controls.Add(this.prgSplash);
@@ -103,5 +115,6 @@ namespace ProjetoLojaABC
         private System.Windows.Forms.ProgressBar prgSplash;
         private System.Windows.Forms.Label lblPorcentagem;
         private System.Windows.Forms.Label lblSimbolo;
+        private System.Windows.Forms.Button btnEntrar;
     }
 }

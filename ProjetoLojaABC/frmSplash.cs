@@ -21,5 +21,12 @@ namespace ProjetoLojaABC
         {
 
         }
+
+        private void btnEntrar_Click(object sender, EventArgs e)
+        {
+            frmLogin abrir = new frmLogin();
+            abrir.Show();
+            this.Hide();
+        }
     }
 }
