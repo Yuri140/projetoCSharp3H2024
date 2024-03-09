@@ -21,5 +21,10 @@ namespace ProjetoLojaABC
         {
 
         }
+
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

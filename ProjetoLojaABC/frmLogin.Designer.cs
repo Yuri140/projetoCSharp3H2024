@@ -68,7 +68,7 @@ namespace ProjetoLojaABC
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = 'l';
             this.txtSenha.Size = new System.Drawing.Size(175, 25);
-            this.txtSenha.TabIndex = 2;
+            this.txtSenha.TabIndex = 1;
             // 
             // txtUsuario
             // 
@@ -77,7 +77,7 @@ namespace ProjetoLojaABC
             this.txtUsuario.MaxLength = 50;
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(175, 26);
-            this.txtUsuario.TabIndex = 4;
+            this.txtUsuario.TabIndex = 0;
             // 
             // lblUsuario
             // 
@@ -96,7 +96,7 @@ namespace ProjetoLojaABC
             this.btnEntrar.Location = new System.Drawing.Point(297, 265);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(75, 42);
-            this.btnEntrar.TabIndex = 5;
+            this.btnEntrar.TabIndex = 2;
             this.btnEntrar.Text = "Entrar";
             this.btnEntrar.UseVisualStyleBackColor = true;
             // 
@@ -106,7 +106,7 @@ namespace ProjetoLojaABC
             this.btnSair.Location = new System.Drawing.Point(397, 265);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(75, 42);
-            this.btnSair.TabIndex = 6;
+            this.btnSair.TabIndex = 3;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = true;
             // 

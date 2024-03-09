@@ -56,7 +56,7 @@ namespace ProjetoLojaABC
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Size = new System.Drawing.Size(249, 194);
             this.btnUsuarios.TabIndex = 5;
-            this.btnUsuarios.Text = "Usuários";
+            this.btnUsuarios.Text = "&Usuários";
             this.btnUsuarios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnUsuarios.UseVisualStyleBackColor = true;
             // 
@@ -68,7 +68,7 @@ namespace ProjetoLojaABC
             this.btnVendas.Name = "btnVendas";
             this.btnVendas.Size = new System.Drawing.Size(252, 194);
             this.btnVendas.TabIndex = 4;
-            this.btnVendas.Text = "Vendas";
+            this.btnVendas.Text = "&Vendas";
             this.btnVendas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnVendas.UseVisualStyleBackColor = true;
             this.btnVendas.Click += new System.EventHandler(this.button5_Click);
@@ -81,7 +81,7 @@ namespace ProjetoLojaABC
             this.btnFuncionarios.Name = "btnFuncionarios";
             this.btnFuncionarios.Size = new System.Drawing.Size(247, 194);
             this.btnFuncionarios.TabIndex = 3;
-            this.btnFuncionarios.Text = "Funcionários";
+            this.btnFuncionarios.Text = "&Funcionários";
             this.btnFuncionarios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnFuncionarios.UseVisualStyleBackColor = true;
             // 
@@ -93,7 +93,7 @@ namespace ProjetoLojaABC
             this.btnFornecedores.Name = "btnFornecedores";
             this.btnFornecedores.Size = new System.Drawing.Size(249, 194);
             this.btnFornecedores.TabIndex = 2;
-            this.btnFornecedores.Text = "Fornecedores";
+            this.btnFornecedores.Text = "Fornecedo&res";
             this.btnFornecedores.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnFornecedores.UseVisualStyleBackColor = true;
             // 
@@ -105,7 +105,7 @@ namespace ProjetoLojaABC
             this.btnProdutos.Name = "btnProdutos";
             this.btnProdutos.Size = new System.Drawing.Size(245, 194);
             this.btnProdutos.TabIndex = 1;
-            this.btnProdutos.Text = "Produtos";
+            this.btnProdutos.Text = "Pro&dutos";
             this.btnProdutos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnProdutos.UseVisualStyleBackColor = true;
             // 
@@ -117,9 +117,10 @@ namespace ProjetoLojaABC
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Size = new System.Drawing.Size(254, 194);
             this.btnClientes.TabIndex = 0;
-            this.btnClientes.Text = "Clientes";
+            this.btnClientes.Text = "&Clientes";
             this.btnClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnClientes.UseVisualStyleBackColor = true;
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
             // frmMenuPrincipal
             // 
@@ -137,6 +138,7 @@ namespace ProjetoLojaABC
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimizeBox = false;
             this.Name = "frmMenuPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LojaABC - Menu Principal";
             this.ResumeLayout(false);
 
