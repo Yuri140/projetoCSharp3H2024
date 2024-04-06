@@ -75,5 +75,12 @@ namespace ProjetoLojaABC
         {
 
         }
+
+        //desabilitar campos
+
+        public void Desabilitar()
+        {
+
+        }
     }
 }

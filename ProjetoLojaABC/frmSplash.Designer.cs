@@ -29,12 +29,13 @@ namespace ProjetoLojaABC
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSplash));
             this.pctLogo = new System.Windows.Forms.PictureBox();
             this.prgSplash = new System.Windows.Forms.ProgressBar();
             this.lblPorcentagem = new System.Windows.Forms.Label();
-            this.lblSimbolo = new System.Windows.Forms.Label();
-            this.btnEntrar = new System.Windows.Forms.Button();
+            this.tmrSplash = new System.Windows.Forms.Timer(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,46 +55,38 @@ namespace ProjetoLojaABC
             this.prgSplash.Name = "prgSplash";
             this.prgSplash.Size = new System.Drawing.Size(300, 32);
             this.prgSplash.TabIndex = 1;
-            this.prgSplash.Value = 50;
             // 
             // lblPorcentagem
             // 
             this.lblPorcentagem.AutoSize = true;
             this.lblPorcentagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPorcentagem.Location = new System.Drawing.Point(378, 398);
+            this.lblPorcentagem.Location = new System.Drawing.Point(368, 400);
             this.lblPorcentagem.Name = "lblPorcentagem";
-            this.lblPorcentagem.Size = new System.Drawing.Size(18, 20);
+            this.lblPorcentagem.Size = new System.Drawing.Size(32, 20);
             this.lblPorcentagem.TabIndex = 2;
-            this.lblPorcentagem.Text = "0";
-            this.lblPorcentagem.Click += new System.EventHandler(this.label1_Click);
+            this.lblPorcentagem.Text = "0%";
             // 
-            // lblSimbolo
+            // tmrSplash
             // 
-            this.lblSimbolo.AutoSize = true;
-            this.lblSimbolo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSimbolo.Location = new System.Drawing.Point(392, 398);
-            this.lblSimbolo.Name = "lblSimbolo";
-            this.lblSimbolo.Size = new System.Drawing.Size(23, 20);
-            this.lblSimbolo.TabIndex = 3;
-            this.lblSimbolo.Text = "%";
+            this.tmrSplash.Enabled = true;
+            this.tmrSplash.Interval = 500;
+            this.tmrSplash.Tick += new System.EventHandler(this.tmrSplash_Tick_1);
             // 
-            // btnEntrar
+            // button1
             // 
-            this.btnEntrar.Location = new System.Drawing.Point(666, 503);
-            this.btnEntrar.Name = "btnEntrar";
-            this.btnEntrar.Size = new System.Drawing.Size(88, 30);
-            this.btnEntrar.TabIndex = 4;
-            this.btnEntrar.Text = "entrar";
-            this.btnEntrar.UseVisualStyleBackColor = true;
-            this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
+            this.button1.Location = new System.Drawing.Point(351, 497);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // frmSplash
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.btnEntrar);
-            this.Controls.Add(this.lblSimbolo);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblPorcentagem);
             this.Controls.Add(this.prgSplash);
             this.Controls.Add(this.pctLogo);
@@ -103,6 +96,7 @@ namespace ProjetoLojaABC
             this.Name = "frmSplash";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LojaABC - Splash";
+            this.Load += new System.EventHandler(this.frmSplash_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -114,7 +108,7 @@ namespace ProjetoLojaABC
         private System.Windows.Forms.PictureBox pctLogo;
         private System.Windows.Forms.ProgressBar prgSplash;
         private System.Windows.Forms.Label lblPorcentagem;
-        private System.Windows.Forms.Label lblSimbolo;
-        private System.Windows.Forms.Button btnEntrar;
+        private System.Windows.Forms.Timer tmrSplash;
+        private System.Windows.Forms.Button button1;
     }
 }
