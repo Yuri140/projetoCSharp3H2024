@@ -25,6 +25,7 @@ namespace ProjetoLojaABC
         public frmFuncionarios()
         {
             InitializeComponent();
+            desabilitarCampos();
         }
 
         private void frmFuncionarios_Load(object sender, EventArgs e)
@@ -34,21 +35,39 @@ namespace ProjetoLojaABC
             RemoveMenu(hMenu, MenuCount, MF_BYCOMMAND);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnNovo_Click(object sender, EventArgs e)
         {
-            frmMenuPrincipal abrir = new frmMenuPrincipal();
-            abrir.Show();
-            this.Hide();
+            habilitarCampos();
         }
 
-        private void button6_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
+            if (txtCodigo.Text.Equals("") || txtNome.Text.Equals("") ||
+                txtEnd.Text.Equals("") || txtCidade.Text.Equals("") ||
+                txtBairro.Text.Equals("") || txtNumero.Text.Equals("") ||
+                txtEmail.Text.Equals("") || mskTelefone.Text.Equals("     -")
+                && mskCPF.Text.Equals("   .   .   -") ||
+                mskCEP.Text.Equals("     -") || cbbEstado.Text.Equals(""))
+            {
+                MessageBox.Show("Favor inserir valores válidos!!!",
+                "Mensagem do sistema", MessageBoxButtons.OK,
+                MessageBoxIcon.Error,
+                MessageBoxDefaultButton.Button1);
 
+            }
+            else
+            {
+                MessageBox.Show("Cadastrado com sucesso!!!",
+               "Mensagem do sistema", MessageBoxButtons.OK,
+               MessageBoxIcon.Information,
+               MessageBoxDefaultButton.Button1);
+                desabilitarCampos();
+                btnNovo.Enabled = true;
+            }
+
+
+           
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
@@ -71,16 +90,59 @@ namespace ProjetoLojaABC
 
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         //desabilitar campos
 
-        public void Desabilitar()
+        public void desabilitarCampos()
         {
+            txtCodigo.Enabled = false;
+            txtBairro.Enabled = false;
+            txtCidade.Enabled = false;
+            txtEmail.Enabled = false;
+            txtEnd.Enabled = false;
+            txtNome.Enabled = false;
+            txtNumero.Enabled = false;
+            mskTelefone.Enabled = false;
+            mskCEP.Enabled = false;
+            mskCPF.Enabled = false;
+            cbbEstado.Enabled = false;
+            btnAlterar.Enabled = false;
+            btnExcluir.Enabled = false;
+            btnLimpar.Enabled = false;
+            btnCadastrar.Enabled = false;
 
+        }
+        public void habilitarCampos()
+        {
+            txtCodigo.Enabled = true;
+            txtBairro.Enabled = true;
+            txtCidade.Enabled = true;
+            txtEmail.Enabled = true;
+            txtEnd.Enabled = true;
+            txtNome.Enabled = true;
+            txtNumero.Enabled = true;
+            mskTelefone.Enabled = true;
+            mskCEP.Enabled = true;
+            mskCPF.Enabled = true;
+            cbbEstado.Enabled = true;
+
+            btnAlterar.Enabled = false;
+            btnExcluir.Enabled = false;
+            btnLimpar.Enabled = true;
+            btnCadastrar.Enabled = true;
+            btnNovo.Enabled = false;
+            txtNome.Focus();
+        }
+
+        private void btnNovo_Click_1(object sender, EventArgs e)
+        {
+            habilitarCampos();
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            frmMenuPrincipal abrir = new frmMenuPrincipal();
+            abrir.Show();
+            this.Hide();
         }
     }
 }
