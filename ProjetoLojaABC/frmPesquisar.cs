@@ -15,6 +15,35 @@ namespace ProjetoLojaABC
         public frmPesquisar()
         {
             InitializeComponent();
+            Desabilitar();
+        }
+
+        public void Desabilitar()
+
+        {
+            rdbNome.Checked = false;
+            rdbCodigo.Checked = false;
+            txtDescricao.Focus();
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            if (rdbCodigo.Checked)
+            {
+                if (txtDescricao.Text.Equals(""))
+                {
+                    MessageBox.Show("Não posso pesquisar", "Campo indefinido");
+                }
+                else
+                {
+                    //Busca por codigo
+                }
+
+            }
+            if (rdbNome.Checked)
+            {
+
+            }
         }
     }
 }

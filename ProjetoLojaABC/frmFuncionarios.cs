@@ -62,6 +62,7 @@ namespace ProjetoLojaABC
                "Mensagem do sistema", MessageBoxButtons.OK,
                MessageBoxIcon.Information,
                MessageBoxDefaultButton.Button1);
+                Limpar();
                 desabilitarCampos();
                 btnNovo.Enabled = true;
             }
@@ -82,12 +83,14 @@ namespace ProjetoLojaABC
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
-
+            frmPesquisar abrir = new frmPesquisar();
+            abrir.Show();
+            //this.Hide();
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)
         {
-
+            Limpar();
         }
 
         //desabilitar campos
@@ -143,6 +146,21 @@ namespace ProjetoLojaABC
             frmMenuPrincipal abrir = new frmMenuPrincipal();
             abrir.Show();
             this.Hide();
+        }
+
+        public void Limpar()
+        {
+            txtCodigo.ResetText();
+            txtBairro.ResetText();
+            txtCidade.ResetText();
+            txtEmail.ResetText();
+            txtEnd.ResetText();
+            txtNome.ResetText();
+            txtNumero.ResetText();
+            mskTelefone.ResetText();
+            mskCEP.ResetText();
+            mskCPF.ResetText();
+            cbbEstado.ResetText();
         }
     }
 }
