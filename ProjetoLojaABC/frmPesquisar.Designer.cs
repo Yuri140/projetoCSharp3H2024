@@ -119,9 +119,11 @@ namespace ProjetoLojaABC
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lstPesquisar);
             this.Controls.Add(this.gpbPesquisar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmPesquisar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LojaABC - Pesquisar";
             this.gpbPesquisar.ResumeLayout(false);
             this.gpbPesquisar.PerformLayout();

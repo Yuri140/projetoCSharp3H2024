@@ -28,21 +28,38 @@ namespace ProjetoLojaABC
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
-            if (rdbCodigo.Checked)
+            if (!rdbCodigo.Checked && !rdbNome.Checked)
             {
-                if (txtDescricao.Text.Equals(""))
-                {
-                    MessageBox.Show("Não posso pesquisar", "Campo indefinido");
-                }
-                else
-                {
-                    //Busca por codigo
-                }
-
+                MessageBox.Show("Selecione qual tipo de pesquisa deseja saber", "Campo indefinido");
             }
-            if (rdbNome.Checked)
+            else
             {
+                if (rdbCodigo.Checked)
+                {
+                    if (txtDescricao.Text.Equals(""))
+                    {
+                        MessageBox.Show("Campo descrição não definido", "Campo indefinido");
+                    }
+                    else
+                    {
+                        //Busca por codigo
+                    }
 
+                }
+
+                if (rdbNome.Checked)
+                {
+                    if (txtDescricao.Text.Equals(""))
+                    {
+                        MessageBox.Show("Campo descrição não definido", "Campo indefinido");
+                    }
+                    else
+                    {
+                        //Busca por codigo
+                    }
+                }
+
+            
             }
         }
     }
