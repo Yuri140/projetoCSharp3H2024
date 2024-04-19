@@ -43,6 +43,7 @@ namespace ProjetoLojaABC
                     else
                     {
                         //Busca por codigo
+
                     }
 
                 }
@@ -61,6 +62,13 @@ namespace ProjetoLojaABC
 
             
             }
+        }
+
+        private void btnTeste_Click(object sender, EventArgs e)
+        {
+            lstPesquisar.Items.Clear();
+            lstPesquisar.Items.Add(" 1 - José Rocha - 25 anos ");
+            
         }
     }
 }
