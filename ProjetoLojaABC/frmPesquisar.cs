@@ -66,9 +66,46 @@ namespace ProjetoLojaABC
 
         private void btnTeste_Click(object sender, EventArgs e)
         {
-            lstPesquisar.Items.Clear();
-            lstPesquisar.Items.Add(" 1 - José Rocha - 25 anos ");
+           
+            lstPesquisar.Items.Add(txtDescricao.Text);
             
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            lstPesquisar.Items.Clear();
+        }
+
+        private void lstPesquisar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            int i = lstPesquisar.SelectedIndex;
+
+            String nome = lstPesquisar.SelectedItem.ToString();
+            MessageBox.Show("O valor da linha é " + nome + " O numero da linha é " + i);
+
+        }
+
+        private void txtDescricao_KeyDown(object sender, KeyEventArgs e)
+        {
+
+           
+
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (txtDescricao.Text.Equals(""))
+                {
+                    MessageBox.Show("Erro! descrição não pode estar vazio", "Erro!");
+                }
+                else
+                {
+                    lstPesquisar.Items.Add(txtDescricao.Text);
+                    txtDescricao.Clear();
+                }
+
+                
+                
+            }
         }
     }
 }
