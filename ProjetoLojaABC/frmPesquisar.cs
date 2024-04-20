@@ -17,6 +17,8 @@ namespace ProjetoLojaABC
             InitializeComponent();
             Desabilitar();
         }
+       
+
 
         public void Desabilitar()
 
@@ -78,11 +80,17 @@ namespace ProjetoLojaABC
 
         private void lstPesquisar_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-            int i = lstPesquisar.SelectedIndex;
+
+            /*int i = lstPesquisar.SelectedIndex;
+
+           
+            MessageBox.Show("O valor da linha é " + nome + " O numero da linha é " + i);*/
 
             String nome = lstPesquisar.SelectedItem.ToString();
-            MessageBox.Show("O valor da linha é " + nome + " O numero da linha é " + i);
+
+            frmFuncionarios abrir = new frmFuncionarios(nome);
+            abrir.Show();
+            this.Hide();
 
         }
 

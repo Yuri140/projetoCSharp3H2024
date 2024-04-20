@@ -28,6 +28,17 @@ namespace ProjetoLojaABC
             desabilitarCampos();
         }
 
+        public frmFuncionarios(String nome)
+        {
+            
+            InitializeComponent();
+            
+            desabilitarCampos();
+            txtNome.Text = nome;
+
+        }
+
+
         private void frmFuncionarios_Load(object sender, EventArgs e)
         {
             IntPtr hMenu = GetSystemMenu(this.Handle, false);
@@ -85,7 +96,7 @@ namespace ProjetoLojaABC
         {
             frmPesquisar abrir = new frmPesquisar();
             abrir.Show();
-            //this.Hide();
+            this.Hide();
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)
