@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using MySql.Data;
 
 namespace ProjetoLojaABC
 {
@@ -172,6 +173,20 @@ namespace ProjetoLojaABC
             mskCEP.ResetText();
             mskCPF.ResetText();
             cbbEstado.ResetText();
+        }
+
+        public void BuscaCEP(String cep)
+        {
+            /*WSCorreios.AtendeClienteClient ws = new WSCorreios.AtendeClienteClient();
+            String end = ws.consultaCEP(mskCEP.Text);
+            txtEnd.Text = end.end;
+            txtCidade*/
+            
+        }
+
+        private void mskCEP_KeyDown(object sender, KeyEventArgs e)
+        {
+            
         }
     }
 }

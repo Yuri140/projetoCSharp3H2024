@@ -26,7 +26,7 @@ namespace ProjetoLojaABC
 
 
         //global - todo mundo vê
-        bool flag = true;
+        //bool flag = true;
 
         public frmLogin()
         {
