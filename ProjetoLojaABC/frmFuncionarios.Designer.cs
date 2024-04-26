@@ -61,6 +61,7 @@ namespace ProjetoLojaABC
             this.label2 = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnConectar = new System.Windows.Forms.Button();
             this.pnlFuncionarios.SuspendLayout();
             this.gpbDadosPessoais.SuspendLayout();
             this.SuspendLayout();
@@ -371,11 +372,22 @@ namespace ProjetoLojaABC
             this.label1.TabIndex = 0;
             this.label1.Text = "Código";
             // 
+            // btnConectar
+            // 
+            this.btnConectar.Location = new System.Drawing.Point(629, 416);
+            this.btnConectar.Name = "btnConectar";
+            this.btnConectar.Size = new System.Drawing.Size(75, 23);
+            this.btnConectar.TabIndex = 13;
+            this.btnConectar.Text = "Conectar";
+            this.btnConectar.UseVisualStyleBackColor = true;
+            this.btnConectar.Click += new System.EventHandler(this.btnConectar_Click);
+            // 
             // frmFuncionarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.btnConectar);
             this.Controls.Add(this.gpbDadosPessoais);
             this.Controls.Add(this.pnlFuncionarios);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -424,5 +436,6 @@ namespace ProjetoLojaABC
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.MaskedTextBox mskTelefone;
+        private System.Windows.Forms.Button btnConectar;
     }
 }

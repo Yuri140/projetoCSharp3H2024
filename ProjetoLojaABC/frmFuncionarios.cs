@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
-using MySql.Data;
+using MySql.Data.MySqlClient; //Importando dados do banco de dados
 
 namespace ProjetoLojaABC
 {
@@ -187,6 +187,18 @@ namespace ProjetoLojaABC
         private void mskCEP_KeyDown(object sender, KeyEventArgs e)
         {
             
+        }
+
+        
+
+        private void btnConectar_Click(object sender, EventArgs e)
+        {
+            MySqlConnection con = new MySqlConnection();
+            con.ConnectionString = "Server = localhost; Port = 3306; Database = dbLoja; Uid = etecia; Pwd = 123456";
+            con.Open();
+            MessageBox.Show("Conexão aberta...");
+            con.Close();
+            MessageBox.Show("Conexão fechada...");
         }
     }
 }
