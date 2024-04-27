@@ -50,6 +50,36 @@ namespace ProjetoLojaABC
         private void btnNovo_Click(object sender, EventArgs e)
         {
             habilitarCampos();
+            txtCodigo.Enabled = false;
+        }
+
+
+        //metodo cadastrar funcionarios
+        public void cadastrarFuncionarios()
+        {
+            
+            MySqlCommand conm = new MySqlCommand();
+            conm.CommandText = "insert into tbFuncionarios(nome,email,cpf, telCel,endereco,numero,cep,bairro,cidade,estado)values(@nome, @email, @cpf,@telCel, @endereco, @numero, @cep, @bairro, @cidade, @estado); ";
+            conm.CommandType = CommandType.Text;
+
+            conm.Parameters.Clear();
+            conm.Parameters.Add("@nome", MySqlDbType.VarChar, 100).Value = txtNome.Text;
+            conm.Parameters.Add("@email", MySqlDbType.VarChar, 100).Value = txtEmail.Text;
+            conm.Parameters.Add("@cpf", MySqlDbType.VarChar, 14).Value = mskCPF.Text;
+            conm.Parameters.Add("@telCel", MySqlDbType.VarChar, 10).Value = mskTelefone.Text;
+            conm.Parameters.Add("@endereco", MySqlDbType.VarChar, 100).Value = txtEnd.Text;
+            conm.Parameters.Add("@numero", MySqlDbType.VarChar, 5).Value = txtNumero.Text;
+            conm.Parameters.Add("@cep", MySqlDbType.VarChar, 9).Value = mskCEP.Text;
+            conm.Parameters.Add("@bairro", MySqlDbType.VarChar, 100).Value = txtBairro.Text;
+            conm.Parameters.Add("@cidade", MySqlDbType.VarChar, 100).Value = txtCidade.Text;
+            conm.Parameters.Add("@estado", MySqlDbType.VarChar, 10).Value = cbbEstado.Text;
+
+
+            conm.Connection = Conexao.obterConexao();
+            int res = conm.ExecuteNonQuery();
+            MessageBox.Show("Cadastrado com sucesso");
+            conm.Connection = Conexao.fecharConexao();
+
         }
 
 
@@ -70,10 +100,7 @@ namespace ProjetoLojaABC
             }
             else
             {
-                MessageBox.Show("Cadastrado com sucesso!!!",
-               "Mensagem do sistema", MessageBoxButtons.OK,
-               MessageBoxIcon.Information,
-               MessageBoxDefaultButton.Button1);
+                cadastrarFuncionarios();
                 Limpar();
                 desabilitarCampos();
                 btnNovo.Enabled = true;
@@ -128,7 +155,7 @@ namespace ProjetoLojaABC
         }
         public void habilitarCampos()
         {
-            txtCodigo.Enabled = true;
+            txtCodigo.Enabled = false;
             txtBairro.Enabled = true;
             txtCidade.Enabled = true;
             txtEmail.Enabled = true;
@@ -189,16 +216,6 @@ namespace ProjetoLojaABC
             
         }
 
-        
-
-        private void btnConectar_Click(object sender, EventArgs e)
-        {
-            MySqlConnection con = new MySqlConnection();
-            con.ConnectionString = "Server = localhost; Port = 3306; Database = dbLoja; Uid = etecia; Pwd = 123456";
-            con.Open();
-            MessageBox.Show("Conexão aberta...");
-            con.Close();
-            MessageBox.Show("Conexão fechada...");
-        }
+       
     }
 }
