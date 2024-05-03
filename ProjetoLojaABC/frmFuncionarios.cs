@@ -47,10 +47,29 @@ namespace ProjetoLojaABC
             RemoveMenu(hMenu, MenuCount, MF_BYCOMMAND);
         }
 
-        private void btnNovo_Click(object sender, EventArgs e)
+        //Metodo obter codigo
+        public void BuscarCodigoFunc()
+        {
+            MySqlCommand conm = new MySqlCommand();
+            conm.CommandText = "Select codFunc+1 from tbFuncionarios ORDER BY codFunc DESC;";
+            conm.CommandType = CommandType.Text;
+            conm.Connection = Conexao.obterConexao();
+            MySqlDataReader DR;
+            DR = conm.ExecuteReader();
+            DR.Read();
+            txtCodigo.Text = DR.GetInt32(0).ToString();
+
+            /*Exemplo repetição while(DR.Read()){}*/
+
+            conm.Connection = Conexao.fecharConexao();
+
+        }
+
+        private void btnNovo_Click_1(object sender, EventArgs e)
         {
             habilitarCampos();
-            txtCodigo.Enabled = false;
+            BuscarCodigoFunc();
+
         }
 
 
@@ -85,7 +104,7 @@ namespace ProjetoLojaABC
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            if (txtCodigo.Text.Equals("") || txtNome.Text.Equals("") ||
+            if (/*txtCodigo.Text.Equals("") ||*/ txtNome.Text.Equals("") ||
                 txtEnd.Text.Equals("") || txtCidade.Text.Equals("") ||
                 txtBairro.Text.Equals("") || txtNumero.Text.Equals("") ||
                 txtEmail.Text.Equals("") || mskTelefone.Text.Equals("     -")
@@ -175,10 +194,7 @@ namespace ProjetoLojaABC
             txtNome.Focus();
         }
 
-        private void btnNovo_Click_1(object sender, EventArgs e)
-        {
-            habilitarCampos();
-        }
+        
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
@@ -213,7 +229,7 @@ namespace ProjetoLojaABC
 
         private void mskCEP_KeyDown(object sender, KeyEventArgs e)
         {
-            
+            //Executar função de busca por cep
         }
 
        
