@@ -29,42 +29,43 @@ namespace ProjetoLojaABC
             txtDescricao.Focus();
         }
 
-        public void BuscaPorCodigo(int codigo)
+        public void buscaPorCodigo(int codigo)
         {
-            MySqlCommand conm = new MySqlCommand();
-            conm.CommandText = "Select from tbfuncionarios where codFUnc = @codigo;";
-            conm.CommandType = CommandType.Text;
-            conm.Connection = Conexao.obterConexao();
+            MySqlCommand comm = new MySqlCommand();
+            comm.CommandText = "select * from tbFuncionarios where codFunc = @codFunc";
+            comm.CommandType = CommandType.Text;
+            comm.Connection = Conexao.obterConexao();
 
-            conm.Parameters.Clear();
-            conm.Parameters.Add("codigo", MySqlDbType.Int32, 11).Value = codigo;
+            comm.Parameters.Clear();
+            comm.Parameters.Add("@codFunc", MySqlDbType.Int32, 11).Value = codigo;
 
             MySqlDataReader DR;
-            DR = conm.ExecuteReader();
+            DR = comm.ExecuteReader();
+            DR.Read();
 
-            lstPesquisar.Items.Add(DR.GetInt32(0));
+            lstPesquisar.Items.Add(DR.GetString(1));
 
             Conexao.fecharConexao();
-            conm.Connection = Conexao.fecharConexao();
-
         }
+
         public void BuscaPorNome(string nome)
         {
             MySqlCommand conm = new MySqlCommand();
-            conm.CommandText = "Select from tbfuncionarios where nome like '%@nome%';";
+            conm.CommandText = "Select * from tbfuncionarios where nome like '%" + nome + "%';";
             conm.CommandType = CommandType.Text;
             conm.Connection = Conexao.obterConexao();
 
             conm.Parameters.Clear();
-            conm.Parameters.Add("nome", MySqlDbType.VarChar, 100).Value = nome;
+            conm.Parameters.Add("@nome", MySqlDbType.String, 100).Value = nome;
 
             MySqlDataReader DR;
             DR = conm.ExecuteReader();
 
-            lstPesquisar.Items.Add(DR.GetInt32(0));
-
+            while (DR.Read())
+            {
+                lstPesquisar.Items.Add(DR.GetString(1));
+            }
             Conexao.fecharConexao();
-            conm.Connection = Conexao.fecharConexao();
 
         }
 
@@ -85,7 +86,7 @@ namespace ProjetoLojaABC
                     else
                     {
                         //Busca por codigo
-                        BuscaPorCodigo(Convert.ToInt32(txtDescricao.Text));
+                        buscaPorCodigo(Convert.ToInt32(txtDescricao.Text));
 
                     }
 
@@ -99,7 +100,8 @@ namespace ProjetoLojaABC
                     }
                     else
                     {
-                        //Busca por codigo
+                        //Busca por nome
+                        BuscaPorNome(txtDescricao.Text);
                     }
                 }
 
