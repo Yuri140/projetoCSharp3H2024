@@ -72,6 +72,35 @@ namespace ProjetoLojaABC
 
         }
 
+        public void CarregaFuncionario()
+        {
+            MySqlCommand conm = new MySqlCommand();
+            conm.CommandText = "";
+            conm.CommandType = CommandType.Text;
+            conm.Connection = Conexao.obterConexao();
+
+            MySqlDataReader DR;
+            DR = conm.ExecuteReader();
+            DR.Read();
+
+            txtCodigo.Text = DR.GetInt32(0).ToString();
+            txtNome.Text = DR.GetString(1);
+            txtEmail.Text = DR.GetString(2);
+            mskCEP.Text = DR.GetString(3);
+            mskTelefone.Text = DR.GetString(4);
+            txtEnd.Text = DR.GetString(5);
+            txtNumero.Text = DR.GetString(6);
+            mskCEP.Text = DR.GetString(7);
+            txtBairro.Text = DR.GetString(8);
+            txtCidade.Text = DR.GetString(9);
+            cbbEstado.Text = DR.GetString(10);
+
+
+
+
+            Conexao.fecharConexao();
+        }
+
 
         //metodo cadastrar funcionarios
         public void cadastrarFuncionarios()

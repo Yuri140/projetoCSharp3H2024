@@ -69,6 +69,8 @@ namespace ProjetoLojaABC
 
         }
 
+        
+
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             if (!rdbCodigo.Checked && !rdbNome.Checked)
