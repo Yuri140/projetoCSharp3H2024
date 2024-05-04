@@ -66,7 +66,6 @@ namespace ProjetoLojaABC
                 lstPesquisar.Items.Add(DR.GetString(1));
             }
             Conexao.fecharConexao();
-
         }
 
         
