@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace ProjetoLojaABC
 {
@@ -17,7 +18,7 @@ namespace ProjetoLojaABC
             InitializeComponent();
             Desabilitar();
         }
-       
+
 
 
         public void Desabilitar()
@@ -26,6 +27,45 @@ namespace ProjetoLojaABC
             rdbNome.Checked = false;
             rdbCodigo.Checked = false;
             txtDescricao.Focus();
+        }
+
+        public void BuscaPorCodigo(int codigo)
+        {
+            MySqlCommand conm = new MySqlCommand();
+            conm.CommandText = "Select from tbfuncionarios where codFUnc = @codigo;";
+            conm.CommandType = CommandType.Text;
+            conm.Connection = Conexao.obterConexao();
+
+            conm.Parameters.Clear();
+            conm.Parameters.Add("codigo", MySqlDbType.Int32, 11).Value = codigo;
+
+            MySqlDataReader DR;
+            DR = conm.ExecuteReader();
+
+            lstPesquisar.Items.Add(DR.GetInt32(0));
+
+            Conexao.fecharConexao();
+            conm.Connection = Conexao.fecharConexao();
+
+        }
+        public void BuscaPorNome(string nome)
+        {
+            MySqlCommand conm = new MySqlCommand();
+            conm.CommandText = "Select from tbfuncionarios where nome like '%@nome%';";
+            conm.CommandType = CommandType.Text;
+            conm.Connection = Conexao.obterConexao();
+
+            conm.Parameters.Clear();
+            conm.Parameters.Add("nome", MySqlDbType.VarChar, 100).Value = nome;
+
+            MySqlDataReader DR;
+            DR = conm.ExecuteReader();
+
+            lstPesquisar.Items.Add(DR.GetInt32(0));
+
+            Conexao.fecharConexao();
+            conm.Connection = Conexao.fecharConexao();
+
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
@@ -45,6 +85,7 @@ namespace ProjetoLojaABC
                     else
                     {
                         //Busca por codigo
+                        BuscaPorCodigo(Convert.ToInt32(txtDescricao.Text));
 
                     }
 
@@ -62,15 +103,15 @@ namespace ProjetoLojaABC
                     }
                 }
 
-            
+
             }
         }
 
         private void btnTeste_Click(object sender, EventArgs e)
         {
-           
+
             lstPesquisar.Items.Add(txtDescricao.Text);
-            
+
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)
@@ -97,7 +138,7 @@ namespace ProjetoLojaABC
         private void txtDescricao_KeyDown(object sender, KeyEventArgs e)
         {
 
-           
+
 
             if (e.KeyCode == Keys.Enter)
             {
@@ -111,8 +152,8 @@ namespace ProjetoLojaABC
                     txtDescricao.Clear();
                 }
 
-                
-                
+
+
             }
         }
     }
