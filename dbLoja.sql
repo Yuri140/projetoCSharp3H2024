@@ -27,6 +27,9 @@ SET time_zone = "+00:00";
 -- Estrutura da tabela `tbfuncionarios`
 --
 
+create database dbLoja;
+use dbLoja;
+
 CREATE TABLE `tbfuncionarios` (
   `codFunc` int(11) NOT NULL,
   `nome` varchar(100) DEFAULT NULL,

@@ -68,6 +68,7 @@ namespace ProjetoLojaABC
 
         private void btnNovo_Click_1(object sender, EventArgs e)
         {
+            Limpar();
             habilitarCampos();
             BuscarCodigoFunc();
 
@@ -76,8 +77,10 @@ namespace ProjetoLojaABC
         public void CarregaFuncionario(String nome)
         {
             MySqlCommand conm = new MySqlCommand();
-            conm.CommandText = "select * from tbFuncionarios where nome = " + nome + " ";
+            conm.CommandText = "select * from tbFuncionarios where nome = @nome ";
             conm.CommandType = CommandType.Text;
+            conm.Parameters.Clear();
+            conm.Parameters.Add("@nome", MySqlDbType.VarChar, 100).Value = nome;
             conm.Connection = Conexao.obterConexao();
 
             MySqlDataReader DR;
@@ -87,7 +90,7 @@ namespace ProjetoLojaABC
             txtCodigo.Text = DR.GetInt32(0).ToString();
             txtNome.Text = DR.GetString(1);
             txtEmail.Text = DR.GetString(2);
-            mskCEP.Text = DR.GetString(3);
+            mskCPF.Text = DR.GetString(3);
             mskTelefone.Text = DR.GetString(4);
             txtEnd.Text = DR.GetString(5);
             txtNumero.Text = DR.GetString(6);
@@ -97,6 +100,20 @@ namespace ProjetoLojaABC
             cbbEstado.Text = DR.GetString(10);
 
             Conexao.fecharConexao();
+
+            FuncaoCarregaFuncionario();
+
+        }
+
+        public void FuncaoCarregaFuncionario()
+        {
+            habilitarCampos();
+            txtCodigo.Enabled = false;
+            btnCadastrar.Enabled = false;
+            btnNovo.Enabled = false;
+            btnAlterar.Enabled = true;
+            btnExcluir.Enabled = true;
+            btnLimpar.Enabled = true;
         }
 
 
@@ -156,9 +173,34 @@ namespace ProjetoLojaABC
            
         }
 
+        public void AlterarFuncionarios(int codFunc)
+        {
+            MySqlCommand conm = new MySqlCommand();
+            conm.CommandText = "Update tbFuncionarios set nome = @nome, email = @email, cpf = @cpf, telCel = @telCel, endereco = @endereco, numero = @numero, cep = @cep, bairro = @bairro, cidade = @cidade, estado = @estado where codFunc = @codFunc";
+            conm.CommandType = CommandType.Text;
+            conm.Parameters.Clear();
+            conm.Parameters.Add("@nome", MySqlDbType.VarChar, 100).Value = txtNome.Text;
+            conm.Parameters.Add("@email", MySqlDbType.VarChar, 100).Value = txtEmail.Text;
+            conm.Parameters.Add("@cpf", MySqlDbType.VarChar, 14).Value = mskCPF.Text;
+            conm.Parameters.Add("@telCel", MySqlDbType.VarChar, 10).Value = mskTelefone.Text;
+            conm.Parameters.Add("@endereco", MySqlDbType.VarChar, 100).Value = txtEnd.Text;
+            conm.Parameters.Add("@numero", MySqlDbType.VarChar, 5).Value = txtNumero.Text;
+            conm.Parameters.Add("@cep", MySqlDbType.VarChar, 9).Value = mskCEP.Text;
+            conm.Parameters.Add("@bairro", MySqlDbType.VarChar, 100).Value = txtBairro.Text;
+            conm.Parameters.Add("@cidade", MySqlDbType.VarChar, 100).Value = txtCidade.Text;
+            conm.Parameters.Add("@estado", MySqlDbType.VarChar, 10).Value = cbbEstado.Text;
+            conm.Parameters.Add("@codFunc",MySqlDbType.Int32).Value = codFunc;
+
+
+            conm.Connection = Conexao.obterConexao();
+            int res = conm.ExecuteNonQuery();
+            MessageBox.Show("Alterado com sucesso");
+            conm.Connection = Conexao.fecharConexao();
+        }
+
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-
+            AlterarFuncionarios(Convert.ToInt32(txtCodigo.Text));
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
@@ -179,6 +221,7 @@ namespace ProjetoLojaABC
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             Limpar();
+            txtNome.Focus();
         }
 
         //desabilitar campos
@@ -235,7 +278,7 @@ namespace ProjetoLojaABC
 
         public void Limpar()
         {
-            txtCodigo.ResetText();
+            //txtCodigo.ResetText();
             txtBairro.ResetText();
             txtCidade.ResetText();
             txtEmail.ResetText();

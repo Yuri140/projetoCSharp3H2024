@@ -80,7 +80,9 @@ namespace ProjetoLojaABC
             {
                 if (rdbCodigo.Checked)
                 {
-                    if (txtDescricao.Text.Equals(""))
+                    buscaPorCodigo(Convert.ToInt32(txtDescricao.Text));
+
+                   /* if (txtDescricao.Text.Equals(""))
                     {
                         MessageBox.Show("Campo descrição não definido", "Campo indefinido");
                     }
@@ -89,13 +91,16 @@ namespace ProjetoLojaABC
                         //Busca por codigo
                         buscaPorCodigo(Convert.ToInt32(txtDescricao.Text));
 
-                    }
+                    }*/
 
                 }
 
                 if (rdbNome.Checked)
                 {
-                    if (txtDescricao.Text.Equals(""))
+
+                    BuscaPorNome(txtDescricao.Text);
+
+                    /*if (txtDescricao.Text.Equals(""))
                     {
                         MessageBox.Show("Campo descrição não definido", "Campo indefinido");
                     }
@@ -103,7 +108,7 @@ namespace ProjetoLojaABC
                     {
                         //Busca por nome
                         BuscaPorNome(txtDescricao.Text);
-                    }
+                    }*/
                 }
 
 
