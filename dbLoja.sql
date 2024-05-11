@@ -44,6 +44,13 @@ CREATE TABLE `tbfuncionarios` (
   `estado` char(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+CREATE TABLE tbUsuario(
+codUsu int not null auto_increment,
+nome varchar(30) not null,
+senha varchar(10) not null,
+primary key (codUsu)
+);
+
 --
 -- Extraindo dados da tabela `tbfuncionarios`
 --
