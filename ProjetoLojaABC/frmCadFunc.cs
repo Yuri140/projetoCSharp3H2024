@@ -26,7 +26,7 @@ namespace ProjetoLojaABC
         public frmCadFunc()
         {
             InitializeComponent();
-            //desabilitarCampos();
+            desabilitarCampos();
         }
 
         private void frmCadFunc_Load(object sender, EventArgs e)
@@ -45,7 +45,7 @@ namespace ProjetoLojaABC
 
         public void Limpar()
         {
-            //txtCodigo.ResetText();
+            txtCodigo.ResetText();
             txtNome.ResetText();
             txtSenha.ResetText();
             txtRepetirSenha.ResetText();
@@ -79,7 +79,7 @@ namespace ProjetoLojaABC
 
         }
 
-        public void cadastrarFuncionarios()
+        public void cadastrarUsuario()
         {
 
             MySqlCommand conm = new MySqlCommand();
@@ -100,15 +100,67 @@ namespace ProjetoLojaABC
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            cadastrarFuncionarios();
+            cadastrarUsuario();
             Limpar();
             desabilitarCampos();
+            btnNovo.Enabled = true;
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
             Limpar();
             habilitarCampos();
+            BuscarCodigoUsu();
         }
+
+        public void AlterarUsuario(int codUsu)
+        {
+            MySqlCommand conm = new MySqlCommand();
+            conm.CommandText = "Update tbUsuario set nome = @nome, senha = @senha where codUsu = @codUsu";
+            conm.CommandType = CommandType.Text;
+            conm.Parameters.Clear();
+            conm.Parameters.Add("@nome", MySqlDbType.VarChar, 100).Value = txtNome.Text;
+            conm.Parameters.Add("@senha", MySqlDbType.VarChar, 10).Value = txtSenha.Text;
+
+
+            conm.Connection = Conexao.obterConexao();
+            int res = conm.ExecuteNonQuery();
+            MessageBox.Show("Alterado com sucesso");
+            conm.Connection = Conexao.fecharConexao();
+        }
+
+        public void ExcluirUsuario(int codUsu)
+        {
+            MySqlCommand conm = new MySqlCommand();
+            conm.CommandText = "Delete from tbUsuario where codUsu = @codUsu";
+            conm.CommandType = CommandType.Text;
+            conm.Parameters.Clear();
+            conm.Parameters.Add("@codFunc", MySqlDbType.Int32).Value = codUsu;
+
+
+            conm.Connection = Conexao.obterConexao();
+            int res = conm.ExecuteNonQuery();
+            MessageBox.Show("Excluido com sucesso");
+            Limpar();
+            conm.Connection = Conexao.fecharConexao();
+        }
+
+        public void BuscarCodigoUsu()
+        {
+            MySqlCommand conm = new MySqlCommand();
+            conm.CommandText = "Select codUsu+1 from tbUsuario ORDER BY codUsu DESC;";
+            conm.CommandType = CommandType.Text;
+            conm.Connection = Conexao.obterConexao();
+            MySqlDataReader DR;
+            DR = conm.ExecuteReader();
+            DR.Read();
+            txtCodigo.Text = DR.GetInt32(0).ToString();
+
+            /*Exemplo repetição while(DR.Read()){}*/
+
+            conm.Connection = Conexao.fecharConexao();
+
+        }
+
     }
 }
