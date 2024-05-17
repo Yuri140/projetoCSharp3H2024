@@ -253,6 +253,7 @@ namespace ProjetoLojaABC
             this.mskCEP.Name = "mskCEP";
             this.mskCEP.Size = new System.Drawing.Size(121, 24);
             this.mskCEP.TabIndex = 9;
+            this.mskCEP.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.mskCEP.KeyDown += new System.Windows.Forms.KeyEventHandler(this.mskCEP_KeyDown);
             // 
             // txtNumero

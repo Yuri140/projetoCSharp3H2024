@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using MySql.Data.MySqlClient; //Importando dados do banco de dados
+using RestSharp;
+using RestSharp.Deserializers;
 
 namespace ProjetoLojaABC
 {
@@ -308,16 +310,40 @@ namespace ProjetoLojaABC
 
         public void BuscaCEP(String cep)
         {
-            /*WSCorreios.AtendeClienteClient ws = new WSCorreios.AtendeClienteClient();
-            String end = ws.consultaCEP(mskCEP.Text);
-            txtEnd.Text = end.end;
-            txtCidade*/
-            
+            RestClient restClient = new RestClient(string.Format("https://viacep.com.br/ws/{0}/json/", mskCEP.Text));
+            RestRequest restRequest = new RestRequest(Method.GET);
+
+            IRestResponse restResponse = restClient.Execute(restRequest);
+
+            DadosRetorno dadosRetorno = new JsonDeserializer().Deserialize<DadosRetorno>(restResponse);
+
+            mskCEP.Text = dadosRetorno.cep;
+            txtEnd.Text = dadosRetorno.logradouro;
+            txtBairro.Text = dadosRetorno.bairro;
+            txtCidade.Text = dadosRetorno.localidade;
+            cbbEstado.Text = dadosRetorno.uf;
+
+            txtNumero.Focus();
+
         }
 
         private void mskCEP_KeyDown(object sender, KeyEventArgs e)
         {
-            //Executar função de busca por cep
+            if (e.KeyCode == Keys.Enter)
+            {
+                RestClient restClient = new RestClient(string.Format("https://viacep.com.br/ws/{0}/json/", mskCEP.Text));
+                RestRequest restRequest = new RestRequest(Method.GET);
+                IRestResponse restResponse = restClient.Execute(restRequest);
+                DadosRetorno dadosRetorno = new JsonDeserializer().Deserialize<DadosRetorno>(restResponse);
+
+                mskCEP.Text = dadosRetorno.cep;
+                txtEnd.Text = dadosRetorno.logradouro;
+                txtBairro.Text = dadosRetorno.bairro;
+                txtCidade.Text = dadosRetorno.localidade;
+                cbbEstado.Text = dadosRetorno.uf;
+                txtNumero.Focus();
+
+            }
         }
 
        
