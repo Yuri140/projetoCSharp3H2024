@@ -181,9 +181,9 @@ namespace ProjetoLojaABC
             this.gpbDadosPessoais.Controls.Add(this.txtCodigo);
             this.gpbDadosPessoais.Controls.Add(this.label1);
             this.gpbDadosPessoais.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpbDadosPessoais.Location = new System.Drawing.Point(120, 42);
+            this.gpbDadosPessoais.Location = new System.Drawing.Point(12, 42);
             this.gpbDadosPessoais.Name = "gpbDadosPessoais";
-            this.gpbDadosPessoais.Size = new System.Drawing.Size(535, 348);
+            this.gpbDadosPessoais.Size = new System.Drawing.Size(760, 359);
             this.gpbDadosPessoais.TabIndex = 0;
             this.gpbDadosPessoais.TabStop = false;
             this.gpbDadosPessoais.Text = "Dados Pessoais";
@@ -191,7 +191,7 @@ namespace ProjetoLojaABC
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(20, 259);
+            this.label11.Location = new System.Drawing.Point(340, 256);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(55, 18);
             this.label11.TabIndex = 20;
@@ -200,22 +200,22 @@ namespace ProjetoLojaABC
             // cbbEstado
             // 
             this.cbbEstado.FormattingEnabled = true;
-            this.cbbEstado.Location = new System.Drawing.Point(94, 256);
+            this.cbbEstado.Location = new System.Drawing.Point(408, 248);
             this.cbbEstado.Name = "cbbEstado";
             this.cbbEstado.Size = new System.Drawing.Size(121, 26);
             this.cbbEstado.TabIndex = 5;
             // 
             // txtCidade
             // 
-            this.txtCidade.Location = new System.Drawing.Point(364, 256);
+            this.txtCidade.Location = new System.Drawing.Point(408, 208);
             this.txtCidade.Name = "txtCidade";
-            this.txtCidade.Size = new System.Drawing.Size(100, 24);
+            this.txtCidade.Size = new System.Drawing.Size(253, 24);
             this.txtCidade.TabIndex = 11;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(302, 256);
+            this.label10.Location = new System.Drawing.Point(340, 211);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(54, 18);
             this.label10.TabIndex = 17;
@@ -223,15 +223,15 @@ namespace ProjetoLojaABC
             // 
             // txtBairro
             // 
-            this.txtBairro.Location = new System.Drawing.Point(364, 216);
+            this.txtBairro.Location = new System.Drawing.Point(408, 162);
             this.txtBairro.Name = "txtBairro";
-            this.txtBairro.Size = new System.Drawing.Size(100, 24);
+            this.txtBairro.Size = new System.Drawing.Size(279, 24);
             this.txtBairro.TabIndex = 10;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(302, 216);
+            this.label9.Location = new System.Drawing.Point(340, 165);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(48, 18);
             this.label9.TabIndex = 15;
@@ -240,7 +240,7 @@ namespace ProjetoLojaABC
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(303, 176);
+            this.label8.Location = new System.Drawing.Point(347, 49);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(39, 18);
             this.label8.TabIndex = 14;
@@ -248,7 +248,7 @@ namespace ProjetoLojaABC
             // 
             // mskCEP
             // 
-            this.mskCEP.Location = new System.Drawing.Point(364, 173);
+            this.mskCEP.Location = new System.Drawing.Point(408, 46);
             this.mskCEP.Mask = "00000-000";
             this.mskCEP.Name = "mskCEP";
             this.mskCEP.Size = new System.Drawing.Size(121, 24);
@@ -258,15 +258,15 @@ namespace ProjetoLojaABC
             // 
             // txtNumero
             // 
-            this.txtNumero.Location = new System.Drawing.Point(364, 133);
+            this.txtNumero.Location = new System.Drawing.Point(421, 125);
             this.txtNumero.Name = "txtNumero";
-            this.txtNumero.Size = new System.Drawing.Size(100, 24);
+            this.txtNumero.Size = new System.Drawing.Size(82, 24);
             this.txtNumero.TabIndex = 8;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(302, 133);
+            this.label7.Location = new System.Drawing.Point(340, 131);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(62, 18);
             this.label7.TabIndex = 11;
@@ -274,15 +274,15 @@ namespace ProjetoLojaABC
             // 
             // txtEnd
             // 
-            this.txtEnd.Location = new System.Drawing.Point(374, 93);
+            this.txtEnd.Location = new System.Drawing.Point(421, 88);
             this.txtEnd.Name = "txtEnd";
-            this.txtEnd.Size = new System.Drawing.Size(100, 24);
+            this.txtEnd.Size = new System.Drawing.Size(334, 24);
             this.txtEnd.TabIndex = 7;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(293, 93);
+            this.label6.Location = new System.Drawing.Point(336, 91);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(72, 18);
             this.label6.TabIndex = 9;
@@ -291,7 +291,7 @@ namespace ProjetoLojaABC
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(303, 48);
+            this.label5.Location = new System.Drawing.Point(10, 240);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(65, 18);
             this.label5.TabIndex = 8;
@@ -299,16 +299,16 @@ namespace ProjetoLojaABC
             // 
             // mskTelefone
             // 
-            this.mskTelefone.Location = new System.Drawing.Point(374, 45);
+            this.mskTelefone.Location = new System.Drawing.Point(81, 237);
             this.mskTelefone.Mask = "00000-0000";
             this.mskTelefone.Name = "mskTelefone";
-            this.mskTelefone.Size = new System.Drawing.Size(121, 24);
+            this.mskTelefone.Size = new System.Drawing.Size(100, 24);
             this.mskTelefone.TabIndex = 6;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(19, 206);
+            this.label4.Location = new System.Drawing.Point(19, 145);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(38, 18);
             this.label4.TabIndex = 6;
@@ -316,7 +316,7 @@ namespace ProjetoLojaABC
             // 
             // mskCPF
             // 
-            this.mskCPF.Location = new System.Drawing.Point(81, 203);
+            this.mskCPF.Location = new System.Drawing.Point(75, 142);
             this.mskCPF.Mask = "999,999,999-99";
             this.mskCPF.Name = "mskCPF";
             this.mskCPF.Size = new System.Drawing.Size(121, 24);
@@ -324,15 +324,15 @@ namespace ProjetoLojaABC
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(81, 139);
+            this.txtEmail.Location = new System.Drawing.Point(81, 191);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(100, 24);
+            this.txtEmail.Size = new System.Drawing.Size(235, 24);
             this.txtEmail.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(19, 139);
+            this.label3.Location = new System.Drawing.Point(19, 197);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(50, 18);
             this.label3.TabIndex = 4;
@@ -342,7 +342,7 @@ namespace ProjetoLojaABC
             // 
             this.txtNome.Location = new System.Drawing.Point(81, 99);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(100, 24);
+            this.txtNome.Size = new System.Drawing.Size(229, 24);
             this.txtNome.TabIndex = 2;
             // 
             // label2
